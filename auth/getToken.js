@@ -1,6 +1,5 @@
 const axios = require("axios");
-require("dotenv").config({ path: "./.env" });
-
+require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const getToken = async () => {
   try {
     const response = await axios.post(
