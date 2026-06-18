@@ -1,5 +1,5 @@
 const axios = require("axios");
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
 
 const getToken = async () => {
   try {
@@ -17,7 +17,7 @@ const getToken = async () => {
 
     return response.data.access_token;
   } catch (error) {
-    console.log(error.response?.data || error.message);
+    throw error;
   }
 };
 
